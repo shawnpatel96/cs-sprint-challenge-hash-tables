@@ -2,9 +2,24 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    cache = {}
+    
+    #final result must be in a results array
+    for arr in arrays:
+        for num in arr:
+            if num in cache:
+                cache[num] += 1
+            else:
+                cache[num] = 1
+   
+    result = []
+
+    for num in cache:
+        if cache[num] == len(arrays):
+            result.append(num)
 
     return result
+
 
 
 if __name__ == "__main__":
